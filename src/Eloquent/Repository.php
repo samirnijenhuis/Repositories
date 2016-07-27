@@ -50,7 +50,7 @@ abstract class Repository implements RepositoryInterface, CriteriaInterface
     public function __construct()
     {
         $this->app = app();
-        $this->criteria = collection();
+        $this->criteria = collect();
         $this->resetScope();
         $this->makeModel();
     }
