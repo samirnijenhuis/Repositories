@@ -45,14 +45,12 @@ abstract class Repository implements RepositoryInterface, CriteriaInterface
     protected $preventCriteriaOverwriting = true;
 
     /**
-     * @param App $app
-     * @param Collection $collection
      * @throws \Bosnadev\Repositories\Exceptions\RepositoryException
      */
-    public function __construct(App $app, Collection $collection)
+    public function __construct()
     {
-        $this->app = $app;
-        $this->criteria = $collection;
+        $this->app = app();
+        $this->criteria = collection();
         $this->resetScope();
         $this->makeModel();
     }
